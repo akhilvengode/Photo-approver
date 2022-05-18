@@ -8,3 +8,4 @@ export { ImageApprover } from './ImageApprover';
 export { ImageSwiper } from './ImageSwiper';
 export { Loader } from './Loader';
 export { Modal } from './Modal';
+export { ErrorBoundary } from './ErrorBoudary';

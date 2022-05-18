@@ -1,10 +1,12 @@
-import { ImageApprover, Layout } from "./components";
+import { ImageApprover, Layout, ErrorBoundary } from './components';
 
 export const App = () => {
   return (
-    <Layout>
-      <ImageApprover />
-    </Layout>
+    <ErrorBoundary>
+      <Layout>
+        <ImageApprover />
+      </Layout>
+    </ErrorBoundary>
   );
 };
 
