@@ -1,6 +1,6 @@
 export { Button } from './Button';
 export { Image } from './Image';
-export { ShowImage } from './ShowImage';
+export { ShowImageButton } from './ShowImageButton';
 export { ApprovedImages } from './ApprovedImages';
 export { ImageModal } from './ImageModal';
 export { Layout } from './Layout';

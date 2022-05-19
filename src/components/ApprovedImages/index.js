@@ -1,7 +1,7 @@
-import { SwiperSlide } from 'swiper/react';
-import { StyledContainer, StyledHeader, ModalImageContainer } from './styles';
-import { Modal, Image, ImageSwiper } from '..';
 import { useState } from 'react';
+import { SwiperSlide } from 'swiper/react';
+import { Modal, Image, ImageSwiper } from '..';
+import { StyledContainer, StyledHeader, ModalImageContainer } from './styles';
 
 export const ApprovedImages = ({ approvedImages }) => {
   const [open, setOpen] = useState(false);

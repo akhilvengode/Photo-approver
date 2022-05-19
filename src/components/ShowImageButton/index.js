@@ -1,7 +1,7 @@
 import { ButtonContentWrapper, StyledAddIcon } from './styles';
 import { Button } from '..';
 
-export const ShowImage = ({ onAddImage }) => {
+export const ShowImageButton = ({ onAddImage }) => {
   return (
     <Button onClick={onAddImage}>
       <ButtonContentWrapper>
