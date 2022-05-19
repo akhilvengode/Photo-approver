@@ -32,13 +32,15 @@ const BUTTON_VARIANT_STYLE = {
 
 export const ButtonStyled = styled.button`
   ${centerStyle}
-  border-radius: 20px;
-  padding: 0.5rem;
+  padding: 1rem 2rem;
   margin: 0 1rem;
   min-width: ${({ minWidth }) => minWidth || '6rem'};
+  min-width: 120px;
+  font-size: 1rem;
   color: white;
   border: none;
   cursor: pointer;
   ${({ disabled, variant }) =>
     disabled ? BUTTON_VARIANT_STYLE.disabled : BUTTON_VARIANT_STYLE[variant]}
+  border-radius: ${({ roundButton }) => (roundButton ? '50px' : '4px')}
 `;

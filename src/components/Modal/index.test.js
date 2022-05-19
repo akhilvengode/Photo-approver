@@ -1,22 +1,35 @@
-import { Modal } from '.';
 import { render, screen } from '@testing-library/react';
+import { Modal } from '.';
 import userEvent from '@testing-library/user-event';
 
-describe('Testing Modal component', () => {
-  const closeFunctionMock = jest.fn();
+describe('Testing Modal Component', () => {
+  const root = document.createElement('div');
 
-  it('should render the button correctly', () => {
-    render(<Modal closeFn={closeFunctionMock}>Hello</Modal>);
-    expect(screen.getByRole('button')).toHaveTextContent(/hello/i);
+  beforeAll(() => {
+    document.body.appendChild(root);
   });
 
-  it('should call the function when clicked', () => {
+  afterAll(() => {
+    document.body.removeChild(root);
+  });
+  const closeFn = jest.fn();
+
+  it('should render the modal properly', () => {
     render(
-      <Modal type="button" onClick={closeFunctionMock}>
+      <Modal open root={root}>
         Hello
       </Modal>,
     );
-    userEvent.click(screen.getByRole('button'));
-    expect(closeFunctionMock).toHaveBeenCalledTimes(1);
+    expect(screen.getByTestId('test-modal')).toHaveTextContent(/hello/i);
+  });
+
+  it('should invoke the close function on clicking the overlay', () => {
+    render(
+      <Modal open root={root} closeFn={closeFn}>
+        Hello
+      </Modal>,
+    );
+    userEvent.click(screen.getByTestId('overlay'));
+    expect(closeFn).toHaveBeenCalledTimes(1);
   });
 });

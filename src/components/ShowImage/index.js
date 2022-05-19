@@ -1,12 +1,13 @@
-import { ButtonContentWrapper, StyledAddIcon, StyledButton } from './styles';
+import { ButtonContentWrapper, StyledAddIcon } from './styles';
+import { Button } from '..';
 
 export const ShowImage = ({ onAddImage }) => {
   return (
-    <StyledButton onClick={onAddImage}>
+    <Button onClick={onAddImage}>
       <ButtonContentWrapper>
         <StyledAddIcon />
         <span>Show Image</span>
       </ButtonContentWrapper>
-    </StyledButton>
+    </Button>
   );
 };

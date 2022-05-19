@@ -14,8 +14,9 @@ export const StyledContainer = styled.div`
   }
 `;
 
-export const StyledHeader = styled.div`
+export const StyledHeader = styled.h1`
   padding: 1rem 2rem;
+  font-size: 1rem;
   color: #3a54e4;
   font-weight: bold;
   border-bottom: 2px solid lightgrey;

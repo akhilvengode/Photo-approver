@@ -3,11 +3,14 @@ import { Overlay, Content, ScreenReaderContent } from './styles';
 
 const modalRoot = document.getElementById('modal-root');
 
-export const Modal = ({ children, open, closeFn }) => {
+export const Modal = ({ children, open, closeFn, root = modalRoot }) => {
   return createPortal(
     <>
-      {open && <Overlay onClick={closeFn} aria-hidden={open} />}
+      {open && (
+        <Overlay data-testid="overlay" onClick={closeFn} aria-hidden={!open} />
+      )}
       <Content
+        data-testid="test-modal"
         open={open}
         aria-describedby="modalDescription"
         aria-hidden={open}>
@@ -18,6 +21,6 @@ export const Modal = ({ children, open, closeFn }) => {
         {children}
       </Content>
     </>,
-    modalRoot,
+    root,
   );
 };

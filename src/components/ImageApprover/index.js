@@ -37,14 +37,16 @@ export const ImageApprover = () => {
           variant="secondary"
           onClick={onRejectImage}
           disabled={isButtonDisabled}
-          aria-label="reject image">
+          aria-label="reject image"
+          roundButton>
           <StyledCancelIcon />
         </Button>
         <Button
           variant="primary"
           onClick={onApproveImage}
           aria-label="approve image"
-          disabled={isButtonDisabled}>
+          disabled={isButtonDisabled}
+          roundButton>
           <StyledCheckIcon />
         </Button>
       </ButtonGroup>
